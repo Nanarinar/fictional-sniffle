@@ -62,57 +62,53 @@ $display("%h * %h + accum = %h",x, y, r); // new prod should be -0.19 or 0xB214-
 x = 16'h3400; // 0.25
 y = 16'h3000; // 0.125
 #2000
-$display("%h + %h= %h",x, y, r);  // should be 3.125E-2 or 0x2800, total now 0xB037
+$display("%h + %h= %h",x, y, r);  // should be 3.125E-2 or 0x2800, total now 0xB037 (-0.1317 decimal)
 
+//-------------------------------------------------------------------
 x = 16'hB4CD; // -0.3
 y = 16'h3A66; // 0.8
 #2000
-$display("%h + %h= %h, %b",x, y, r,r);  // 
+$display("%h + %h= %h, %b",x, y, r,r);  // (-0.24, 0xB3AE) + (-0.1317) = -0.3716 ( B5F2)
 
 
 x = 16'h3666; // 0.4
 y = 16'h3B00; // 0.875
 #2000
-$display("%h + %h= %h, %b",x, y, r,r);  //
+$display("%h + %h= %h, %b",x, y, r,r);  // 0.3499, 0x3599 + (-0.3716) = -2.173E-2 (0xA590)
 
 x = 16'h3800; // 0.5
 y = 16'hBA00; // -0.75
 #2000
-$display("%h + %h= %h, %b",x, y, r,r);  // 
+$display("%h + %h= %h, %b",x, y, r,r);  // -0.375, 0xB600 + (-2.173E-2) = -0.3967 (0xB659)
 
 x = 16'h3866; // 0.55
 y = 16'h3666; // 0.4
 #2000
-$display("%h + %h= %h, %b",x, y, r,r);  // 
+$display("%h + %h= %h, %b",x, y, r,r);  // 0.2198, 0x3309 + (-0.3967) = -0.1769 (0xB1A9) mine b1aa??
 
 x = 16'h38CD; // 0.6
 y = 16'h38CD; // 0.6
 #2000
-$display("%h + %h= %h, %b",x, y, r,r);  // 
+$display("%h + %h= %h, %b",x, y, r,r);  // 0.36, 0x35C3 + (-0.1769) = 0.1832 (0x31DD) mine 31dc??
 
 x = 16'hBA00; // -0.75
 y = 16'h30CD; // 0.15
 #2000
-$display("%h + %h= %h, %b",x, y, r,r);  //
+$display("%h + %h= %h, %b",x, y, r,r);  // -1.1255E-1, 0xAF34 + (0.1832) = 0.0707 (0x2C86) mine 2c84
 
-x = 16'h3B00; // 0.8
+x = 16'h3A66; // 0.8
 y = 16'h3400; // 0.25
 #2000
-$display("%h + %h= %h, %b",x, y, r,r);  // 
+$display("%h + %h= %h, %b",x, y, r,r);  // 0.2, 0x3266 + (0.0707) = 0.2705 (0x3454)
 
-x = 16'hB4CD; // 0.875
+x = 16'h3B00; // 0.875
 y = 16'hB666; // -0.4
 #2000
-$display("%h + %h= %h, %b",x, y, r,r);  // 
-
+$display("%h + %h= %h, %b",x, y, r,r);  // -0.3499, 0xB599 + 0.2705 = -7.935E-2 (0xAD14)
 x = 16'h3B33; // 0.9
 y = 16'h3866; // 0.55
 #2000
-$display("%h + %h= %h, %b",x, y, r,r);  // should be -0.24 or 0xB3AE, total now -0.3716 or 0xB5F2
-
-
-
-
+$display("%h + %h= %h, %b",x, y, r,r);  // 0.4949, 0x37EB + (-7.935E-2) = 0.4155 (0x36a6)
 
 
 
